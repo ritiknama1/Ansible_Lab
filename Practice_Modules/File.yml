@@ -1,0 +1,24 @@
+
+- name: create a directory using file module 
+  hosts: all
+  tasks: 
+    - name: Create a directory in rn server 1
+      ansible.builtin.file:
+        path: /home/tricky/Ansible
+        state: directory
+        mode: '754'
+
+    - name: Ansible directory me file create kr 
+      ansible.builtin.file:
+        path: /home/tricky/Ansible/file1.yml
+        state: touch 
+    
+    - name: jo file bnayi uski ownership change kr rha hu ab 
+      ansible.builtin.file:
+        path: /home/tricky/Ansible/file1.yml
+        owner: tricky 
+        group: tricky
+        mode: '1777'
+
+    -
+
